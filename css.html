@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css</title>
+	<meta charset="utf-8">
+	<style type="text/css" id="css">
+	.box{height: 200px;
+		border: 10px 
+		solid #000; 
+		padding: 10px;
+		font-size: 20px;
+		color:#fff;
+
+		display: -webkit-box;
+		 -webkit-box-direction:reverse;
+		 -webkit-box-pack:justify;
+		  -webkit-box-align:center;
+        
+        display: -moz-box;
+        -moz-box-pack:justify;
+        -moz-box-align:center;
+
+        display: box;
+        box-pack:justify;
+        box-align:center;
+		}
+	.box div {
+		height: 100px;
+		width: 100px;
+		background-color: red;
+		border:1px solid #fff;}
+	.img{ 
+		width: 300px; 
+		height:300px;
+		 background:url(img/img1.jpg);
+		  border: 5px solid #000;
+		  resize: both;
+		  overflow: auto;} 
+
+    #div1:hover
+			{
+			width:300px; 
+			background: green;
+			}
+    #div1 {width:150px;
+           background:blue;
+			transition:width 2s width,2s 2s background;
+			-moz-transition:width 2s width,2s 2s background;; /* Firefox 4 */
+			-webkit-transition:2s width,2s 2s background; /* Safari and Chrome */
+			 -o-transition:width 2s width,2s 2s background; /* Opera */}
+
+    /*点击一次，变长一次*/
+    #div2{width: 150px;
+    	  height:30px; 
+    	 background: blue;
+         -webkit-transition: 1s;}
+  
+  /*花朵的边框设置*/
+
+  .flower{ height: 400px;
+  	       width: 400px;
+  	       margin: 50px auto; 
+  	      transition: 5s;
+  	      }
+
+  .flower div{width: 180px;
+  	height: 180px;
+  	margin: 8px ;
+  	border: 1px solid #000; 
+  	box-sizing:border-box;
+  	 float: left;
+  	 background-color: rgba(162,123,165,0.8);}
+
+  .flower div:nth-child(1),.flower div:nth-child(4){border-radius: 0 50%;}
+  .flower div:nth-child(2),.flower div:nth-child(3){border-radius: 50% 0;}
+  .flower:hover{-webkit-transform:rotate(90deg);  }
+      
+	/*.box div:nth-of-type(1){-webkit-box-ordinal-group:2;}*/
+	/*设定第一个div为二号div*/
+
+	/*.box div:nth-of-type(1){-webkit-box-flex:1;}
+	.box div:nth-of-type(2){-webkit-box-flex:2;}
+	.box div:nth-of-type(3){-webkit-box-flex:3;}
+	.box div:nth-of-type(4){-webkit-box-flex:4;}
+	.box div:nth-of-type(5){-webkit-box-flex:5;}*/
+     /*弹性排列*/
+
+/*进度条*/
+     .wrap 
+      {width: 1200px;
+     	height: 30px;
+     	overflow: hidden;
+     	border:6px solid #fff;
+     	border-radius: 20px;}
+     .process{
+     	width: 1900px;
+     	height: 30px;
+     	background:-webkit-repeating-linear-gradient(60deg,red 10px,yellow 20px);
+     	 transition: 2s;}
+
+     	.wrap:hover .process{margin-left:-200px;}
+ /*图下出现说明 */
+.tu{width: 400px;
+	height: 500px;
+	 border: 5px solid #fff;
+	 background:url(img/p1.jpg) no-repeat; 
+	 background-size: cover;
+	 position: relative; 
+	 overflow:hidden;}
+.dis{width: 400px;
+	height:0px;
+	background-color: rgba(122,111,111,0.6);
+	transition:1.5s; 
+	font-size: 20px;
+	 bottom: 0px;
+	 position: absolute;}
+.tu:hover .dis{height: 50px;}
+
+/*下边框有黑色红色边框*/
+.cont{width: 50em;
+      border: 1em solid;}
+ .b1{
+ 	box-sizing:border-box;
+ 	width: 50%;
+ 	border:1em solid red;
+ 	float: left;
+ }
+
+/*闪光字*/
+ .sheer{background:#000;text-align:center;font:50px/200px "微软雅黑";}
+ .h1 {display: inline-block;color:rgba(255,255,255,0.3);
+            background: -webkit-linear-gradient(30deg,rgba(255,255,255,0) 100px,rgba(255,255,255,1) 150px,rgba(255,255,255,0)210px)-300px 0 no-repeat;-webkit-background-clip:text; }
+            
+/*遮罩*/
+/*.box1{width: 500px;height: 600px;background: url(img/img1.jpg) no-repeat;
+background-size: 100% 100%;border: 10px solid #000; -webkit-mask:url(mask.png) no-repeat; }
+.box1:hover {-webkit-mask-position:100% 100%;}
+*/
+
+/*旋转的红方块*/
+.box2father{height: 300px;
+	border: 1px solid #000;
+   margin-top: 5px;}
+
+.box2{width: 100px;
+	height: 100px;
+	background: red;
+	margin:10px ;
+   transition:2s;
+  -webkit-transform-origin:200px 200px;}
+  .box2father:hover  .box2:nth-of-type(1){
+  	-webkit-transform:rotate(360deg) scale(0.2); 
+  /*	-webkit-transform:rotate(360deg); 旋转
+  	-webkit-transform:scale(2); 缩放
+  	-webkit-transform:skew(15deg,15deg)斜切，像个搓澡*/
+  	/*-webkit-transform:translateX(100px); /*移动*/
+  }
+  .box2father:hover .box2:nth-of-type(2)
+  {
+   -webkit-transform:translateX(100px) scale(.5);
+  }
+
+/*时钟*/
+#clack{width: 200px;
+	height: 200px;
+	border: 2px solid #000;
+	margin: 100px auto;
+	position: relative;
+ border-radius: 50%;}
+#clack ul{
+	margin: 0;
+	padding: 0;
+	height: 200px;
+	position: relative;
+	list-style: none;
+}	
+#clack li{
+	width: 2px;
+	height: 10px;
+	background: #000;
+	position: absolute;
+	left: 99px;
+	top: 0;
+	-webkit-transform-origin:center 100px;
+}
+#clack li:nth-of-type(3n+1){height: 20px;}
+#clack li:nth-of-type(1){-webkit-transform:rotate(0);}
+#clack li:nth-of-type(2){-webkit-transform:rotate(30deg);}
+#clack li:nth-of-type(3){-webkit-transform:rotate(60deg);}
+#clack li:nth-of-type(4){-webkit-transform:rotate(90deg);}
+#clack li:nth-of-type(5){-webkit-transform:rotate(120deg);}
+#clack li:nth-of-type(6){-webkit-transform:rotate(150deg);}
+#clack li:nth-of-type(7){-webkit-transform:rotate(180deg);}
+#clack li:nth-of-type(8){-webkit-transform:rotate(210deg);}
+#clack li:nth-of-type(9){-webkit-transform:rotate(240deg);}
+#clack li:nth-of-type(10){-webkit-transform:rotate(270deg);}
+#clack li:nth-of-type(11){-webkit-transform:rotate(300deg);}
+#clack li:nth-of-type(12){-webkit-transform:rotate(330deg);}
+#hour{width: 6px;
+   height: 45px;
+   background: #000;
+  position: absolute;
+  left:97px;
+  top: 55px;
+-webkit-transform-origin:bottom;}
+
+#min{width: 4px;
+   height: 60px;
+   background: yellow;
+  position: absolute;
+  left:98px;
+  top: 40px;
+-webkit-transform-origin:bottom;}
+
+#sec{width: 2px;
+   height: 80px;
+   background: red;
+  position: absolute;
+  left:98px;
+  top: 20px;
+-webkit-transform-origin:bottom;}
+
+.ico{width: 10px;
+	height: 10px;
+	background: #000;
+border-radius: 50%;
+position: absolute;
+left: 95px;
+top:90px;}
+
+/*扇形导航*/
+
+#menu{width: 50px;
+      height: 50px;
+      position: fixed;
+      right: 20px;
+      bottom:20px;}
+
+#menu_list{width: 42px;
+           height: 42px;
+           position: relative;
+          margin:4px;}      
+#menu_list img{
+	           
+	           border-radius: 21px;
+               position: absolute;
+               left: 0;
+               top: 0;
+               -webkit-transition:0.5s;
+               }
+
+#home{ width: 50px;
+	  height: 50px;
+	  background: url(img/2.jpg) no-repeat;
+	  border-radius:25px;
+	  position: absolute;
+	  left:0;
+	  top: 0;
+	  transition:1s;
+}
+
+/*3d立方体*/
+.d3{width: 100px;
+	height: 100px;
+	padding: 100px;
+	border: 5px solid #000;
+    margin: 100px auto;
+    -webkit-perspective:300px;}
+
+.d3Box{width: 100px;
+       height: 100px;
+        -webkit-transform-origin:center center 50px;
+        position: relative;
+        transition: 2s;
+       -webkit-transform-style:preserve-3d;}
+.d3Box div{width: 100px;
+           height: 100px;
+           position: absolute;
+           font-size: 50px;
+           text-align: center;
+           line-height:100px;
+           color: #fff;
+          }
+.d3Box div:nth-of-type(1){left:0;top: -100px;background: #9c0;-webkit-transform-origin:bottom;-webkit-transform:rotateX(90deg);}
+.d3Box div:nth-of-type(2){left:-100px;top: 0px;background: #cc0;-webkit-transform-origin:right;-webkit-transform:rotateY(-90deg);}
+.d3Box div:nth-of-type(3){left:0;top: 0px;background: #1b0;}
+.d3Box div:nth-of-type(4){left:100px;top: 0px;background: #333;-webkit-transform-origin:left;-webkit-transform:rotateY(90deg);}
+.d3Box div:nth-of-type(5){left:0;top: 100px;background: #252;-webkit-transform-origin:top;-webkit-transform:rotateX(-90deg);}
+.d3Box div:nth-of-type(6){left:0;top: 0px;background: #4c0;-webkit-transform:translateZ(-100px) rotateX(180deg);}
+ .d3:hover .d3Box{-webkit-transform:rotateX(360deg);}
+
+/*关键帧动画*/
+@-webkit-keyframes move
+{
+	50%
+       {width: 500px;}
+}
+.carton{width: 100px;
+       height: 100px;
+       background: green;
+       -webkit-animation: 2s move 2/*infinite*/;}
+
+
+    </style>
+
+
+
+</head>
+<body>
+<div class="box">
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	
+</div>
+<div class="img">
+	
+  </div>
+<div id="div1"><p>beach and sun</p></div>
+
+<div id="div2"><p>变长两下次</p></div>
+<script type="text/javascript">
+	var div2=document.getElementById('div2');
+	div2.onclick=function()
+	{
+		this.style.width=this.offsetWidth+50+'px';
+		addEnd(div2,end);
+	};
+	
+
+	function  end(){
+		this.style.width=this.offsetWidth+50+'px';
+		removeEnd(this,end);
+	}
+   // 点击接受后再一次变长
+	function addEnd(obj,fn)
+	{
+		obj.addEventListener('webkitTransitionEnd',fn,false);
+		obj.addEventListener('transitionend',fn,false);
+	}
+	//每次点击仅长长2次
+	function removeEnd(obj,fn)
+	{
+		obj.removeEventListener('webkitTransitionEnd',fn,false);
+		obj.removeEventListener('transitionend',fn,false);
+	}
+</script>
+
+
+<!-- 转动的花朵 -->
+<div class="flower">
+	<div ></div>
+	<div></div>
+	<div></div>
+	<div></div>
+
+</div>
+
+<!-- 进度条 -->
+ <div class="wrap"> 
+ <div class="process"></div>
+ </div>
+
+<!-- 图上文字出现 -->
+<div class="tu">
+	<div class="dis"><p>“说明了现在已经要熄灯了！” </p></div>
+</div>
+
+<div class="cont">
+	<div class="b1">左边框</div>
+	<div class="b1">右边框</div>
+</div>
+
+<!-- 闪光字 -->
+<div class="sheer">
+	<h1 class="h1">钻石，钻石亮晶晶</h1>
+	<script type="text/javascript">
+	
+		var oH=document.getElementsByTagName('h1')[0];
+        var timer=null;
+        var oLeft=-300;
+		function toMove(){
+        timer=setInterval(function()
+        	{
+        		oLeft+=10;
+        		if (oLeft==700) 
+        		{
+        			oLeft=-300;
+        			clearInterval(timer);
+        		}
+        		
+        		oH.style.backgroundPosition=oLeft+'px 0px';
+
+        	},30);
+       }
+		oH.onmouseover=function()
+		{toMove();};
+
+       
+        //闪光一次的运动时间
+		 // setInterval(function(){
+		 // 	toMove();
+		 // },1000);
+
+
+	</script>
+	
+</div>
+<!-- 红方块的动画 -->
+<div class="box2father">
+<div class="box2"></div>
+<div class="box2"></div>
+</div>
+
+<!-- 时钟 -->
+<div id="clack">
+	<ul id="ul1">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<div id="hour"></div>
+	<div id="min"></div>
+	<div id="sec"></div>
+	<div class="ico"></div>
+</div>
+<script type="text/javascript">
+	var oList=document.getElementById('ul1');
+	var oCss=document.getElementById('css');
+	var oSec=document.getElementById('sec');
+	var oMin=document.getElementById('min');
+	var ohour=document.getElementById('hour');
+	var ali='';
+	var cell='';
+
+	for (var i = 0; i < 60; i++) {
+		ali+='<li></li>';
+		cell+="#clack li:nth-of-type("+(i+1)+"){-webkit-transform:rotate("+i*6+"deg);";
+
+	}
+	oList.innerHTML=ali;
+	// oCss.innerHTML=cell;自动放入指针 放入CSS中，给css一个ID
+toTime();
+setInterval(toTime,1000);
+function toTime()
+{
+
+	var oDate=new Date();
+	var iSec=oDate.getSeconds();
+	var iMin=oDate.getMinutes()+iSec/60;
+	var iHour=oDate.getHours()+iMin/60;
+	oSec.style.WebkitTransform="rotate("+iSec*6+"deg)";
+	oMin.style.WebkitTransform="rotate("+iMin*6+"deg)";
+	ohour.style.WebkitTransform="rotate("+iHour*30+"deg)";
+
+};
+</script>
+
+<!-- 扇形导航 -->
+
+<div id="menu">
+	<div id="menu_list">
+		<img src="img/3.jpg" alt="">
+		<img src="img/4.jpg" alt="">
+		<img src="img/5.jpg" alt="">
+		<img src="img/6.jpg" alt="">
+	</div>
+	<div id="home"></div>
+</div>
+
+<script type="text/javascript">
+	window.onload=function()
+	{
+		var oHome=document.getElementById('home');
+		var aImg=document.getElementById('menu').getElementsByTagName('img');
+        var bOff=true;
+        var iR=-150;
+       
+       for (var i = 0; i < aImg.length; i++) {
+       	aImg[i].onclick=function()
+       	{
+       		this.style.WebkitTransition="0.3s";
+       		this.style.opacity=0.3;
+       		this.style.webkitTransform='scale(2) rotate(-720deg)';
+       		addEnd(this,end1);
+       	};
+       }
+       function end1()
+       {
+       	    this.style.WebkitTransition="0.1s";
+       		this.style.opacity=1;
+       		this.style.webkitTransform='scale(1) rotate(-720deg)';
+       		removeEnd(this,end1);
+       }
+		oHome.onclick=function()
+		{
+			if (bOff) 
+			{
+				this.style.WebkitTransform="rotate(-360deg)" ;
+				for (var i = 0; i < aImg.length; i++) {
+					
+					var oLt=toLT(iR,90/4*i);
+					aImg[i].style.left=oLt.l+"px";
+					aImg[i].style.top=oLt.t+"px";
+					aImg[i].style.webkitTransform="scale(1) rotate(-720deg)";
+					aImg[i].style.WebkitTransition="0.5s "+i*100+"ms";
+				}
+			}	
+           else
+           {this.style.webkitTransform="rotate(0deg)";
+             for (var i = 0; i < aImg.length; i++) {
+					
+					
+					aImg[i].style.left=0+"px";
+					aImg[i].style.top=0+"px";
+					aImg[i].style.webkitTransform="scale(1) rotate(720deg)";
+					aImg[i].style.WebkitTransition=" 0.5s "+(aImg.length-i)*100+"ms";
+
+				}}
+           bOff=!bOff;
+		};
+          
+	};
+	function toLT(iR,iDeg)
+	{
+		return {l:Math.round(Math.sin(iDeg/180*Math.PI)*iR),
+			    t:Math.round(Math.cos(iDeg/180*Math.PI)*iR)};
+	}
+</script>
+
+<!-- 3D盒子 -->
+<div class="d3">
+	<div class="d3Box">
+		 <div>1</div>
+		 <div>2</div>
+		 <div>3</div>
+		 <div>4</div>
+		 <div>5</div>
+		 <div>6</div>
+
+	</div>
+</div>
+
+<!-- 关键帧动画 -->
+<div>
+	<div  class="carton"></div>
+</div>
+
+<!-- 图片翻转 从下向上 -->
+
+
+</body>
+</html>
